@@ -3,7 +3,7 @@ module.exports.config = {
   version: "1.0.1",
   permssion: 0,
   credits: "Islamick Cyber Chat",
-  prefix: false,
+  prefix: true,
   description: "Text translation",
   category: "media",
   usages: "[hi/ar/bn/vi/en] [Text]",
