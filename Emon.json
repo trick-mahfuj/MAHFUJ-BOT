@@ -1,0 +1,25 @@
+{
+  "author": "Emon",
+  "developermode": false,
+  "language": "en",
+  "notification": true,
+  "approval": false,
+  "OPERATORNAME": "Shaon Ahmed",
+  "OPERATORID": "100029115600589",
+  "OPERATORLINK": "https://www.facebook.com/EMon.BHai.FACEBOOK",
+  "BOTNAME": "༆-✿SHAON PROJECT-!!✨🌺",
+  "PREFIX": "/",
+  "OPERATOR": [
+    "100029115600589"
+  ],
+  "ADMINBOT": [
+    "100090879572769",
+    "",
+    ""
+  ],
+  "OWNER": ["100075290587473"],
+  "APPROVED": ["100029115600589"],
+  "disabledcmds": [],
+  "disabledevents": [],
+  "note": "make sure that the bot name you entered is all lowercase"
+}

@@ -1,0 +1,74 @@
+hidden = ["package-lock.json", "package.json", "Emon"]
+language = "bash"
+run = "npm start"
+modules = ["nodejs-20"]
+
+[deployment]
+run = ["sh", "-c", "npm run start"]
+deploymentTarget = "gce"
+ignorePorts = true
+build = ["sh", "-c", "npm install"]
+
+[[ports]]
+localPort = 32871
+externalPort = 5173
+
+[[ports]]
+localPort = 33331
+externalPort = 9000
+
+[[ports]]
+localPort = 33545
+externalPort = 80
+
+[[ports]]
+localPort = 33863
+externalPort = 3001
+
+[[ports]]
+localPort = 33965
+externalPort = 8000
+
+[[ports]]
+localPort = 35735
+externalPort = 3000
+
+[[ports]]
+localPort = 36771
+externalPort = 5000
+
+[[ports]]
+localPort = 37905
+externalPort = 8099
+
+[[ports]]
+localPort = 38225
+externalPort = 8080
+
+[[ports]]
+localPort = 40001
+externalPort = 8081
+
+[[ports]]
+localPort = 41343
+externalPort = 3002
+
+[[ports]]
+localPort = 44027
+externalPort = 6800
+
+[[ports]]
+localPort = 44843
+externalPort = 4200
+
+[[ports]]
+localPort = 45925
+externalPort = 6000
+
+[[ports]]
+localPort = 46263
+externalPort = 3003
+
+[[ports]]
+localPort = 46565
+externalPort = 8008
