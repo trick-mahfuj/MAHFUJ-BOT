@@ -1,5 +1,5 @@
 module.exports.config = {
-  name: "ar",
+  name: "tik",
   version: "1.0.1",
   permssion: 0,
   credits: "Islamick Chat",
@@ -12,28 +12,29 @@ module.exports.config = {
     "request":  ""
   }
 };
+module.exports.run = async function ({ api, event, args }) {
+  let link = args.join(" ");
 
-module.exports.run = async ({ api, event, args }) => {
-  const request = global.nodemodule["request"];
-  var content = args.join(" ");
-  if (content.length == 0 && event.type != "message_reply") return global.utils.throwError(this.config.name, event.threadID,event.messageID);
-  var translateThis = content.slice(0, content.indexOf(" ->"));
-  var lang = content.substring(content.indexOf(" -> ") + 4);
-  if (event.type == "message_reply") {
-    translateThis = event.messageReply.body
-    if (content.indexOf("-> ") !== -1) lang = content.substring(content.indexOf("-> ") + 3);
-    else lang = global.config.language;
+  if (!link) {
+    api.sendMessage("Please put a valid TikTok video link", event.threadID, event.messageID);
+    return;
   }
-  else if (content.indexOf(" -> ") == -1) {
-    translateThis = content.slice(0, content.length)
-    lang = global.config.language;
-  }
-  return request(encodeURI(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=ar&dt=t&q=${translateThis}`), (err, response, body) => {
-    if (err) return api.sendMessage("An error has occurred!", event.threadID, event.messageID);
-    var retrieve = JSON.parse(body);
-    var text = '';
-    retrieve[0].forEach(item => (item[0]) ? text += item[0] : '');
-    var fromLang = (retrieve[2] === retrieve[8][0][0]) ? retrieve[2] : retrieve[8][0][0]
-    api.sendMessage(`${text}`, event.threadID, event.messageID);
-  });
-      }
+
+  api.sendMessage("𝐀𝐤𝐭𝐮 𝐰8 𝐤𝐨𝐫𝐨 <😒", event.threadID, event.messageID);
+
+  try {
+   let path = __dirname + `/cache/`;
+    let res = await axios.get(`https://mx47g4-8888.csb.app/tiktok/downloadvideo?url=${encodeURIComponent(link)}`);
+    await fs.ensureDir(path);
+   path += 'tik_dip.mp4';
+    const data = res.data.data;
+    const vid = (await axios.get(data.play, { responseType: "arraybuffer" })).data;
+    fs.writeFileSync(path, Buffer.from(vid, 'stream'));
+    api.sendMessage({
+      body: `✅Title:${data.title}.\n✅Play Count: ${data.play_count}.\n✅Comment Count: ${data.comment_count}.\n✅Share Count: ${data.share_count}.\n✅Download Count: ${data.download_count}`, attachment: fs.createReadStream(path)
+    }, event.threadID, () => fs.unlinkSync(path), event.messageID);
+
+  } catch (e) {
+    api.sendMessage(`${e}`, event.threadID, event.messageID);
+  };
+};
