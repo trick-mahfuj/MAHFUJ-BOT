@@ -15,12 +15,12 @@ module.exports.run = async function({ api, event, args }) {
     const axios = require("axios")
     const request = require("request")
     const fs = require("fs-extra")
-    const res = await axios.get(`https://raw.githubusercontent.com/cyber-rajib/cyber-api-stutus-video/main/status.json`);
+    const res = await axios.get(`https://all-api-ius8.onrender.com/video/status2`);
     var data = res.data.data;
     var msg = [];
     let img1 = `${res.data.url.url}`;
     let cp = `${res.data.url.title}`
-    let cyber = `${res.data.author}`
+    let Shaon = `${res.data.author}`
 
     let imgs1 = (await axios.get(`${img1}`, {
         responseType: 'arraybuffer'
@@ -30,7 +30,7 @@ module.exports.run = async function({ api, event, args }) {
     allimage.push(fs.createReadStream(__dirname + "/cache/img1.mp4"));
 
     {
-        msg += `°\n\n__${cp}\n\n${cyber}`
+        msg += `°\n\n__${cp}\n\n✨🌺${Shaon}..!🍂`
 
     }
 
@@ -38,4 +38,4 @@ module.exports.run = async function({ api, event, args }) {
         body: msg,
         attachment: allimage
     }, event.threadID, event.messageID);
-}
+      }
