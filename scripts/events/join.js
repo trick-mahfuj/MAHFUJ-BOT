@@ -43,7 +43,7 @@ module.exports.run = async function({ api, event, Users }) {
   let threadName = threadInfo.threadName;
   if (event.logMessageData.addedParticipants.some(i => i.userFbId == api.getCurrentUserID())) {
     api.changeNickname(` ${(!global.config.BOTNAME) ? "Buddy" : global.config.BOTNAME}`, threadID, api.getCurrentUserID());
-    return api.sendMessage("", event.threadID, () => api.sendMessage({body:`✅ Group Connection in ${threadName} at ${session} Success....\n──────────────────\n→ Current Command: ${commands .size}\n→ Command sign: ${global.config.PREFIX}\n→ Version: ${global.config.version}\n→ Admin: <SHAON AHMED>\n→ Facebook:https://www.facebook.com/Hey.Its.Me.Shaon.Ahmed\n📌 Use ${PRFX}help to view command details\n⏰ Add bot at: ${time} 〈 ${thu} 〉`, attachment: fs.createReadStream(__dirname + "/cache/join/join.gif")}, threadID));
+    return api.sendMessage("", event.threadID, () => api.sendMessage({body:`✅ Group Connection in ${threadName} at ${session} Success....\n──────────────────\n→ Current Command: ${commands .size}\n→ Command sign: ${global.config.PREFIX}\n→ Version: ${global.config.version}\n→ Admin: <SHAON AHMED>\n→ Facebook:https://www.facebook.com/Hey.Its.Me.Shaon.Ahmed\n📌 Use ${PRFX}help to view command details\n⏰ Add bot at: ${time} 〈 ${thu} 〉`, attachment: fs.createReadStream(__dirname + "/cache/joinGif/randomgif/join.gif")}, threadID));
   }
   else {
     try {
