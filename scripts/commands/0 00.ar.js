@@ -3,7 +3,7 @@ module.exports.config = {
   version: "1.0.1",
   permssion: 0,
   credits: "Islamick Chat",
-  prefix: false,
+  prefix: true,
   description: "Text translation",
   category: "media",
   usages: "[en/ar/bn/vi] [Text]",
@@ -27,7 +27,7 @@ module.exports.run = async function ({ api, event, args }) {
     let res = await axios.get(`https://all-api-ius8.onrender.com/tiktok/downloadvideo?url=${encodeURIComponent(link)}`);
     await fs.ensureDir(path);
    path += 'tik_dip.mp4';
-    const data = res.data.data;
+    const data = res.data.play;
     const vid = (await axios.get(data.play, { responseType: "arraybuffer" })).data;
     fs.writeFileSync(path, Buffer.from(vid, 'stream'));
     api.sendMessage({
