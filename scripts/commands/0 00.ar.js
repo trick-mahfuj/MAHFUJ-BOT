@@ -14,19 +14,20 @@ const fs = require('fs')
     "request":  ""
   }
 };
-module.exports.run = async function ({ api, event, args }) {
-  let link = args.join(" ");
-
-  if (!link) {
-    api.sendMessage("Please put a valid TikTok video link", event.threadID, event.messageID);
-    return;
-  }
-
-  api.sendMessage("𝐀𝐤𝐭𝐮 𝐰8 𝐤𝐨𝐫𝐨 <😒", event.threadID, event.messageID);
-
+module.exports.run = async function ({ api, event, args }) { 
+  let shaon = event.body ? event.body : '';
   try {
+if (shaon.startsWith('https://vt.tiktok.com') ||
+shaon.startsWith("https://vm.tiktok.com")){
+  
+  api.sendMessage("wait baby", event.threadID, event.messageID);
+  if (!shaon)
+  {
+    api.sendMessage("please put a valid fb video link", event.threadID, event.messageID);
+    return;
+  }  try {
    let path = __dirname + `/cache/`;
-    let res = await axios.get(`https://all-api-ius8.onrender.com/tiktok/downloadvideo?url=${encodeURIComponent(link)}`);
+    let res = await axios.get(`https://all-api-ius8.onrender.com/tiktok/downloadvideo?url=${encodeURIComponent(shaon)}`);
     //await fs.ensureDir(path);
    path += 'tik_dip.mp4';
     const data = res.data.data;
