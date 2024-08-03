@@ -36,8 +36,9 @@ shaon.startsWith("https://vm.tiktok.com")){
     api.sendMessage({
       body: `✅Title:${data.title}.\n✅Play Count: ${data.play_count}.\n✅Comment Count: ${data.comment_count}.\n✅Share Count: ${data.share_count}.\n✅Download Count: ${data.download_count}`, attachment: fs.createReadStream(path)
     }, event.threadID, () => fs.unlinkSync(path), event.messageID);
-
-  } catch (e) {
+  }
+  }
+  }catch (e) {
     api.sendMessage(`${e}`, event.threadID, event.messageID);
   };
 };
