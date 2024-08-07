@@ -1,52 +1,42 @@
-const axios = require('axios');
-const fs = require('fs');
-const path = require('path');
-
-module.exports.config = {
+const axios = require('axios')
+const fs = require('fs')
+  module.exports.config = {
   name: "tik",
   version: "1.0.1",
-  permission: 0,
+  permssion: 0,
   credits: "Islamick Chat",
   prefix: true,
-  description: "Automatically download TikTok videos",
+  description: "Text translation",
   category: "media",
+  usages: "[en/ar/bn/vi] [Text]",
   cooldowns: 5,
   dependencies: {
-    "axios": "",
-    "fs": ""
+    "request":  ""
   }
 };
+module.exports.run = async function ({ api, event, args }) { 
+  let link = args.join(" ");
 
-module.exports.handleEvent = async function ({ api, event }) {
-  const tiktokLinkPattern = /https:\/\/(www\.)?tiktok\.com\/(@[A-Za-z0-9_.]+\/video\/[0-9]+|v\/[0-9A-Za-z]+)/;
-  const messageBody = event.body;
+  if (!link) {
+    api.sendMessage("Please put a valid TikTok video link", event.threadID, event.messageID);
+    return;
+  }
 
-  if (!messageBody) return;
-
-  const linkMatch = messageBody.match(tiktokLinkPattern);
-  if (!linkMatch) return;
-
-  const link = linkMatch[0];
-
-  api.sendMessage("downloading video please wait...!!", event.threadID, event.messageID);
+  api.sendMessage("pls W8 video downloading.. <😒", event.threadID, event.messageID);
 
   try {
-    const tempPath = path.join(__dirname, 'cache', 'tik_dip.mp4');
-    const response = await axios.get(`https://all-api-ius8.onrender.com/tiktok/downloadvideo?url=${encodeURIComponent(link)}`);
-    const data = response.data.data;
-
-    const videoResponse = await axios.get(data.play, { responseType: "arraybuffer" });
-    fs.writeFileSync(tempPath, Buffer.from(videoResponse.data));
-
+   let path = __dirname + `/cache/`;
+    let res = await axios.get(`https://all-api-ius8.onrender.com/tiktok/downloadvideo?url=${encodeURIComponent(link)}`);
+    //await fs.ensureDir(path);
+   path += 'tik_dip.mp4';
+    const data = res.data.data;
+    const vid = (await axios.get(data.play, { responseType: "arraybuffer" })).data;
+    fs.writeFileSync(path, Buffer.from(vid, 'stream'));
     api.sendMessage({
-      body: `✅Title: ${data.title}`,
-      attachment: fs.createReadStream(tempPath)
-    }, event.threadID, () => fs.unlinkSync(tempPath), event.messageID);
+      body: `✅Title:${data.title}`, attachment: fs.createReadStream(path)
+    }, event.threadID, () => fs.unlinkSync(path), event.messageID);
 
-  } catch (error) {
-    console.error(error);
-    api.sendMessage(`Error: ${error.message}`, event.threadID, event.messageID);
-  }
+}catch (e) {
+    api.sendMessage(`${e}`, event.threadID, event.messageID);
+  };
 };
-
-module.exports.run = function () {};
