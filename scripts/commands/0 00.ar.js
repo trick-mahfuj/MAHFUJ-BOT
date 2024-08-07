@@ -7,6 +7,7 @@ module.exports.config = {
   version: "1.0.1",
   permission: 0,
   credits: "Islamick Chat",
+  prefix: true,
   description: "Automatically download TikTok videos",
   category: "media",
   cooldowns: 5,
