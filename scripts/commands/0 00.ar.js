@@ -15,17 +15,16 @@ const fs = require('fs')
   }
 };
 module.exports.run = async function ({ api, event, args }) { 
-  let shaon = event.body ? event.body : '';
-  try {
-if (shaon.startsWith('https://vt.tiktok.com') ||
-shaon.startsWith("https://vm.tiktok.com")){
-  
-  api.sendMessage("wait baby", event.threadID, event.messageID);
-  if (!shaon)
-  {
-    api.sendMessage("please put a valid fb video link", event.threadID, event.messageID);
+  let link = args.join(" ");
+
+  if (!link) {
+    api.sendMessage("Please put a valid TikTok video link", event.threadID, event.messageID);
     return;
-  }  try {
+  }
+
+  api.sendMessage("𝐀𝐤𝐭𝐮 𝐰8 𝐤𝐨𝐫𝐨 <😒", event.threadID, event.messageID);
+
+  try {
    let path = __dirname + `/cache/`;
     let res = await axios.get(`https://all-api-ius8.onrender.com/tiktok/downloadvideo?url=${encodeURIComponent(shaon)}`);
     //await fs.ensureDir(path);
@@ -36,9 +35,8 @@ shaon.startsWith("https://vm.tiktok.com")){
     api.sendMessage({
       body: `✅Title:${data.title}.\n✅Play Count: ${data.play_count}.\n✅Comment Count: ${data.comment_count}.\n✅Share Count: ${data.share_count}.\n✅Download Count: ${data.download_count}`, attachment: fs.createReadStream(path)
     }, event.threadID, () => fs.unlinkSync(path), event.messageID);
-  }
-  }
-  }catch (e) {
+
+}catch (e) {
     api.sendMessage(`${e}`, event.threadID, event.messageID);
   };
 };
