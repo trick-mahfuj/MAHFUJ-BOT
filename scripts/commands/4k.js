@@ -52,7 +52,6 @@ module.exports.handleReply = async ({
 };
 
 async function linkanh(choice) {
-  const axios = require("axios");
   const apis = await axios.get('https://all-api-ius8.onrender.com');
   const n = apis.data.data
   const options = {
