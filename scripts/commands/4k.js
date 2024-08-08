@@ -1,13 +1,29 @@
 module.exports.config = {
-  name: "album",
-  version: "0.0.3",
-  permission: 0,
-  prefix: 'awto',
-  credits: "Nayan",
-  description: "Random video",
-  category: "user",
-  usages: "",
-  cooldowns: 5,
+
+    name: "album",
+
+    version: "1.0.0",
+
+    permission: 0,
+
+    credits: "Nayan",
+
+    description: "Photo Convert HD",
+
+    prefix: 'awto',
+
+    category: "user",
+
+    usages: "hd [Reply photo]",
+
+    cooldowns: 10,
+
+    dependencies: {
+
+       'nayan-server': ''
+
+    }
+
 };
 
 module.exports.run = async function({
@@ -23,9 +39,7 @@ module.exports.run = async function({
       type: "create"
     })
   }), e.messageID)
-}; 
-
-module.exports.handleReply = async ({
+  }, module.exports.handleReply = async ({
   api: e,
   event: a,
   client: n,
@@ -33,48 +47,69 @@ module.exports.handleReply = async ({
   Currencies: s,
   Users: i,
   Threads: o
-}) => {
-  var { p, h } = await linkanh(a.body);
-     const response = await p.get(h);
-    const data = response.data.data;
-    const cap = response.data.shaon;
-    const cn = response.data.count;
-    let shaon = (await p.get(data, {
+  }) => {
+  var { p, h } = linkanh();
+
+  if ("create" === t.type) {
+    const n = (await p.get(h)).data.data;
+    const shaon = (await p.get(h)).data.shaon;
+    const ls = (await p.get(h)).data.count;
+    let t = (await p.get(n, {
       responseType: "stream"
     })).data;
     return e.sendMessage({
-      body: `🟡${cap}\n𝚃𝙾𝚃𝙰𝙻 𝚅𝙸𝙳𝙴𝙾:${cn}\n𝙰 𝙿 𝙸  𝚂 𝙷 𝙰 𝙾 𝙽📛`,
-      attachment: shaon
+      body: `🟡${shaon}\n𝚃𝙾𝚃𝙰𝙻 𝚅𝙸𝙳𝙴𝙾:${ls}\n𝙰 𝙿 𝙸  𝚂 𝙷 𝙰 𝙾 𝙽📛`,
+      attachment: t
     }, a.threadID, a.messageID)
   }
-};
 
-async function linkanh(choice) {
-  const axios = require("axios");
-  const apis = await axios.get('https://all-api-ius8.onrender.com');
-  const n = apis.data.data
-  const options = {
-    "1": "/video/islam",
-    "2": "/video/anime",
-    "3": "/video/shairi",
-    "4": "/video/short",
-    "5": "/video/sad",
-    "6": "/video/status",
-    "7": "/video/football",
-    "8": "/video/funny",
-    "9": "/video/love",
-    "10": "/video/cpl",
-    "11": "/video/baby",
-    "12": "/video/kosto",
-    "13": "/video/lofi",
-    "14": "/video/happy",
-    "15": "/video/humaiyun",
-    "16": "/video/sex",
-    "17": "/video/horny",
-    "18": "/video/item",
-    "19": "/video/hot",
-    "20": "/video/capcut"
-  };
-  const h = `${n}${options[choice]}`;
-  return { p: axios, h };
-}
+  function linkanh() {
+        const p = require("axios");
+        if ("1" == a.body)
+            var h = "https://all-api-ius8.onrender.com/video/islam";
+        else if ("2" == a.body)
+         var   h = "https://all-api-ius8.onrender.com/video/anime";
+        else if ("3" == a.body)
+         var   h = "https://all-api-ius8.onrender.com/video/shairi";
+        else if ("4" == a.body)
+          var  h = "https://all-api-ius8.onrender.com/video/short";
+        else if ("5" == a.body)
+          var  h = "https://all-api-ius8.onrender.com/video/sad";
+        else if ("6" == a.body)
+          var  h = "https://all-api-ius8.onrender.com/video/status";
+        else if ("7" == a.body)
+          var  h = "https://all-api-ius8.onrender.com/video/football";
+        else if ("8" == a.body)
+          var  h = "https://all-api-ius8.onrender.com/video/funny";
+        else if ("9" == a.body)
+         var   h = "https://all-api-ius8.onrender.com/video/love";
+        else if ("10" == a.body)
+         var  h = "https://all-api-ius8.onrender.com/video/cpl";
+          else if ("11" == a.body)
+           var  h = "https://all-api-ius8.onrender.com/video/baby";
+          else if ("12" == a.body)
+          var  h = "https://all-api-ius8.onrender.com/video/kosto";
+         else if ("13" == a.body)
+         var  h = "https://all-api-ius8.onrender.com/video/lofi";
+         else if ("14" == a.body)
+         var  h = "https://all-api-ius8.onrender.com/video/happy";
+         else if ("15" == a.body)
+         var  h = "https://all-api-ius8.onrender.com/video/humaiyun";
+           else if ("16" == a.body)
+         var  h =
+"https://all-api-ius8.onrender.com/video/sex";
+    else if ("17" == a.body)
+         var  h =
+"https://all-api-ius8.onrender.com/video/horny";
+    else if ("18" == a.body)
+         var  h =
+"https://all-api-ius8.onrender.com/video/item";
+    else if ("19" == a.body)
+         var  h =
+"https://all-api-ius8.onrender.com/video/hot";
+    else if ("20" == a.body)
+         var  h =
+"https://all-api-ius8.onrender.com/video/capcut";
+        return { p, h };
+    }
+};
