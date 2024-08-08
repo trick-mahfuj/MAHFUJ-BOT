@@ -105,7 +105,7 @@ convertHMS: function(value) {
 },
   
   run: async function ({ api, event, args }) {
-    if (args.length == 0 || !args) return api.reply('» উফফ আবাল কি গান শুনতে চাস তার ২/১ লাইন তো লেখবি নাকি 🥵 empty!', event.threadID, event.messageID);
+    if (args.length == 0 || !args) return api.sendMessage('» উফফ আবাল কি গান শুনতে চাস তার ২/১ লাইন তো লেখবি নাকি 🥵 empty!', event.threadID, event.messageID);
     const keywordSearch = args.join(" ");
     var path = `${__dirname}/cache/1.mp3`
     if (fs.existsSync(path)) { 
@@ -114,8 +114,8 @@ convertHMS: function(value) {
     if (args.join(" ").indexOf("https://") == 0) {
         try {
             var data = await downloadMusicFromYoutube(args.join(" "), path);
-            if (fs.statSync(path).size > 26214400) return api.reply('Unable to send files because the capacity is greater than 25MB .', event.threadID, () => fs.unlinkSync(path), event.messageID);
-            return api.reply({ 
+            if (fs.statSync(path).size > 26214400) return api.sendMessage('Unable to send files because the capacity is greater than 25MB .', event.threadID, () => fs.unlinkSync(path), event.messageID);
+            return api.sendMessage({ 
                 body: `🎵 Title: ${data.title}\n🎶 Name Channel: ${data.author}\n⏱️ Time: ${this.convertHMS(data.dur)}\n👀 Views: ${data.viewCount}\n👍 Likes: ${data.likes}\n⏱️ Processing time: ${Math.floor((Date.now()- data.timestart)/1000)} second\n💿====DISME PROJECT====💿`,
                 attachment: fs.createReadStream(path)}, event.threadID, ()=> fs.unlinkSync(path), 
             event.messageID)
@@ -135,7 +135,7 @@ convertHMS: function(value) {
               msg += (`${num} - ${value.title} (${value.length.simpleText})\n\n`);
             }
             var body = `»🔎 There's ${link.length} the result coincides with your search keyword:\n\n${msg}» Reply(feedback) select one of the searches above `
-            return api.reply({
+            return api.sendMessage({
               body: body
             }, event.threadID, (error, info) => global.client.handleReply.push({
               type: 'reply',
@@ -145,7 +145,7 @@ convertHMS: function(value) {
               link
             }), event.messageID);
           } catch(e) {
-            return api.reply('An error has occurred, please try again in a moment!!\n' + e, event.threadID, event.messageID);
+            return api.sendMessage('An error has occurred, please try again in a moment!!\n' + e, event.threadID, event.messageID);
         }
     }
                                                                                                                                                                                     }}
