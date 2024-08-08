@@ -104,8 +104,8 @@ convertHMS: function(value) {
     return (hours != '00' ? hours +':': '') + minutes+':'+seconds;
 },
   
-  start: async function ({ nayan, events, args }) {
-    if (args.length == 0 || !args) return nayan.reply('» উফফ আবাল কি গান শুনতে চাস তার ২/১ লাইন তো লেখবি নাকি 🥵 empty!', events.threadID, events.messageID);
+  run: async function ({ api, event, args }) {
+    if (args.length == 0 || !args) return api.reply('» উফফ আবাল কি গান শুনতে চাস তার ২/১ লাইন তো লেখবি নাকি 🥵 empty!', event.threadID, event.messageID);
     const keywordSearch = args.join(" ");
     var path = `${__dirname}/cache/1.mp3`
     if (fs.existsSync(path)) { 
@@ -114,11 +114,11 @@ convertHMS: function(value) {
     if (args.join(" ").indexOf("https://") == 0) {
         try {
             var data = await downloadMusicFromYoutube(args.join(" "), path);
-            if (fs.statSync(path).size > 26214400) return nayan.reply('Unable to send files because the capacity is greater than 25MB .', events.threadID, () => fs.unlinkSync(path), events.messageID);
-            return nayan.reply({ 
+            if (fs.statSync(path).size > 26214400) return api.reply('Unable to send files because the capacity is greater than 25MB .', event.threadID, () => fs.unlinkSync(path), event.messageID);
+            return api.reply({ 
                 body: `🎵 Title: ${data.title}\n🎶 Name Channel: ${data.author}\n⏱️ Time: ${this.convertHMS(data.dur)}\n👀 Views: ${data.viewCount}\n👍 Likes: ${data.likes}\n⏱️ Processing time: ${Math.floor((Date.now()- data.timestart)/1000)} second\n💿====DISME PROJECT====💿`,
-                attachment: fs.createReadStream(path)}, events.threadID, ()=> fs.unlinkSync(path), 
-            events.messageID)
+                attachment: fs.createReadStream(path)}, event.threadID, ()=> fs.unlinkSync(path), 
+            event.messageID)
 
         }
         catch (e) { return console.log(e) }
@@ -135,17 +135,17 @@ convertHMS: function(value) {
               msg += (`${num} - ${value.title} (${value.length.simpleText})\n\n`);
             }
             var body = `»🔎 There's ${link.length} the result coincides with your search keyword:\n\n${msg}» Reply(feedback) select one of the searches above `
-            return nayan.reply({
+            return api.reply({
               body: body
-            }, events.threadID, (error, info) => global.client.handleReply.push({
+            }, event.threadID, (error, info) => global.client.handleReply.push({
               type: 'reply',
               name: this.config.name,
               messageID: info.messageID,
-              author: events.senderID,
+              author: event.senderID,
               link
-            }), events.messageID);
+            }), event.messageID);
           } catch(e) {
-            return nayan.reply('An error has occurred, please try again in a moment!!\n' + e, events.threadID, events.messageID);
+            return api.reply('An error has occurred, please try again in a moment!!\n' + e, event.threadID, event.messageID);
         }
     }
-                                                                                                                                                                                                       }}
+                                                                                                                                                                                    }}
