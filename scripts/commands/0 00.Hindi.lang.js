@@ -1,7 +1,7 @@
 module.exports.config = {
   name: "nz",
   version: "1.0.1",
-  permssion: 0,
+  permission: 0,
   credits: "Islamick Cyber Chat",
   prefix: true,
   description: "Text translation",
@@ -9,7 +9,8 @@ module.exports.config = {
   usages: "[hi/ar/bn/vi/en] [Text]",
   cooldowns: 5,
   dependencies: {
-    "request":  ""
+    "axios": "",
+    "fs-extra": ""
   }
 };
 
@@ -18,44 +19,25 @@ module.exports.run = async function ({ api, event, args }) {
   const fs = require("fs-extra");
   const prompt = args.join(" ");
 
-  if (!prompt) return api.sendMessage("[ ! ] Input Your address", event.threadID, event.messageID);
-
-
- const SHAON = `http://api.aladhan.com/v1/timingsByAddress?address=${encodeURIComponent(prompt)}`;
+  if (!prompt) return api.sendMessage("[ ! ] Input your address", event.threadID, event.messageID);
 
   try {
-    const response = await axios.get(SHAON);
-    const timings = convertTo12HourFormat(response.data.data.timings) ;
-function convertTo12HourFormat(time) {
-    const [hour, minute] = time.split(':');
-    const hourInt = parseInt(hour, 10);
-    const period = hourInt >= 12 ? 'PM' : 'AM';
-    const hour12 = hourInt % 12 || 12; 
-    return `${hour12}:${minute} ${period}`;
-}
+    const { data: { data: { timings } } } = await axios.get(`http://api.aladhan.com/v1/timingsByAddress?address=${encodeURIComponent(prompt)}`);
+    const convertTo12Hour = t => `${(h=t.split(':')[0]%12||12)}:${t.split(':')[1]} ${h>=12?'PM':'AM'}`;
+    const formattedTimings = Object.fromEntries(Object.entries(timings).map(([k, v]) => [k, convertTo12Hour(v)]));
 
-    const ShaonApiUrl = "https://all-api-ius8.onrender.com/video/status2";
-    const videoResponse = await axios.get(ShaonApiUrl);
-    const videoUrl = videoResponse.data.url.url;
-
+    const { data: { url: { url: videoUrl } } } = await axios.get("https://all-api-ius8.onrender.com/video/status2");
     const videoBuffer = await axios.get(videoUrl, { responseType: 'arraybuffer' });
+    const videoPath = `${__dirname}/cache/video.mp4`;
 
-    fs.writeFileSync(__dirname + "/cache/video.mp4", Buffer.from(videoBuffer.data, "utf-8"));
-    const videoReadStream = fs.createReadStream(__dirname + "/cache/video.mp4");
+    fs.writeFileSync(videoPath, Buffer.from(videoBuffer.data));
+    const videoReadStream = fs.createReadStream(videoPath);
 
-    const msg = `───※ ·SHAON PROJECT· ※───\n\nনামাযের-সময়:${prompt}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n╰┈► ফজর: ${timings.Fajr}\n\n╰┈► যহর: ${timings.Dhuhr}\n\n╰┈► আছর: ${timings.Asr}\n\n╰┈► সূর্যাস্ত: ${timings.Sunset}\n\n╰┈► মাগরিব: ${timings.Maghrib}\n\n╰┈► ইশা: ${timings.Isha}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n╰┈► ইমসাক: ${timings.Imsak}\n\n╰┈► মধ্যরাত: ${timings.Midnight}\n\n───※ ·SHAON PROJECT· ※───`;
+    const msg = `───※ ·SHAON PROJECT· ※───\n\nনামাযের-সময়: ${prompt}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n╰┈► ফজর: ${formattedTimings.Fajr}\n╰┈► যহর: ${formattedTimings.Dhuhr}\n╰┈► আছর: ${formattedTimings.Asr}\n╰┈► সূর্যাস্ত: ${formattedTimings.Sunset}\n╰┈► মাগরিব: ${formattedTimings.Maghrib}\n╰┈► ইশা: ${formattedTimings.Isha}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n╰┈► ইমসাক: ${formattedTimings.Imsak}\n╰┈► মধ্যরাত: ${formattedTimings.Midnight}\n\n───※ ·SHAON PROJECT· ※───`;
 
-    return api.sendMessage(
-      {
-        body: msg,
-        attachment: videoReadStream,
-      },
-      event.threadID,
-      event.messageID
-    );
+    return api.sendMessage({ body: msg, attachment: videoReadStream }, event.threadID, event.messageID);
   } catch (error) {
-
-    console.error("❐ 𝚂𝙷𝙰𝙾𝙽 6𝚇 𝚂𝙴𝚁𝚅𝙴𝚁 𝙱𝚄𝚂𝚈 𝙽𝙾𝚆 💔🥀:", error);
-    return api.sendMessage("❐ 𝚂𝙷𝙰𝙾𝙽 6𝚇 𝚂𝙴𝚁𝚅𝙴𝚁 𝙱𝚄𝚂𝚈 𝙽𝙾𝚆 💔🥀", event.threadID, event.messageID);
+    console.error("❐ SHAON 6X SERVER BUSY NOW 💔🥀:", error);
+    return api.sendMessage("❐ SHAON 6X SERVER BUSY NOW 💔🥀", event.threadID, event.messageID);
   }
 };
