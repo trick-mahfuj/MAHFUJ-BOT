@@ -1,9 +1,9 @@
 module.exports.config = {
-  name: "status",
+  name: "/",
   version: "1.0.0", 
   permssion: 0,
   credits: "Islamick Cyber Chat", 
-  prefix: 'true',
+  prefix: 'false',
   description: " stutus video",
   category: "system video", 
   usages: "", 
