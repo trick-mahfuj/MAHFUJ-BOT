@@ -25,8 +25,14 @@ module.exports.run = async function ({ api, event, args }) {
 
   try {
     const response = await axios.get(SHAON);
-    const timings = response.data.data.timings;
-
+    const timings = convertTo12HourFormat(response.data.data.timings) ;
+function convertTo12HourFormat(time) {
+    const [hour, minute] = time.split(':');
+    const hourInt = parseInt(hour, 10);
+    const period = hourInt >= 12 ? 'PM' : 'AM';
+    const hour12 = hourInt % 12 || 12; 
+    return `${hour12}:${minute} ${period}`;
+}
 
     const ShaonApiUrl = "https://all-api-ius8.onrender.com/video/status2";
     const videoResponse = await axios.get(ShaonApiUrl);
