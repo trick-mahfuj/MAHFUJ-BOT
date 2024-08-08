@@ -35,9 +35,7 @@ module.exports.handleReply = async ({
   Threads: o
 }) => {
   var { p, h } = await linkanh(a.body);
-  const axios = require("axios");
-  if ("create" === t.type) {
-    const response = await p.get(h);
+     const response = await p.get(h);
     const data = response.data.data;
     const cap = response.data.shaon;
     const cn = response.data.count;
@@ -52,6 +50,7 @@ module.exports.handleReply = async ({
 };
 
 async function linkanh(choice) {
+  const axios = require("axios");
   const apis = await axios.get('https://all-api-ius8.onrender.com');
   const n = apis.data.data
   const options = {
