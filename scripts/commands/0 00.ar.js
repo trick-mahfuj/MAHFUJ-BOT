@@ -49,7 +49,7 @@ module.exports.handleEvent = async function ({ api, event }) {
     fs.writeFileSync(tempPath, Buffer.from(videoResponse.data));
 
     api.sendMessage({
-      body: `✅ Title: ${data.title}`,
+      body: `🔰Successfully Downloaded Facebook Video✅`,
       attachment: fs.createReadStream(tempPath)
     }, event.threadID, () => fs.unlinkSync(tempPath), event.messageID);
 
