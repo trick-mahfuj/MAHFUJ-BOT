@@ -22,17 +22,17 @@ module.exports.handleEvent = async function ({ api, event }) {
 
       const path = __dirname + `/cache/fb_${event.threadID}_${Date.now()}.mp4`;
 
-      const res = await axios.get(`https://all-api-ius8.onrender.comTap on a clip to paste it in the text box.Welcome to Gboard clipboard, any text that you copy will be saved here./fbdl?url=${encodeURIComponent(msg)}`);
-      if (!res.data || !res.data.sd) {
+      const res = await axios.get(`https://all-api-ius8.onrender.com./fbdl?url=${encodeURIComponent(msg)}`);
+      if (!res.data || !res.data.hd) {
         api.sendMessage("Failed to retrieve video. Please check the link and try again.", event.threadID, event.messageID);
         return;
       }
 
-      const videoBuffer = (await axios.get(res.data.sd, { responseType: "arraybuffer" })).data;
+      const videoBuffer = (await axios.get(res.data.hd, { responseType: "arraybuffer" })).data;
       fs.writeFileSync(path, Buffer.from(videoBuffer, 'binary'));
 
       api.sendMessage({
-        body: "🔰 Successfully Downloaded Facebook Video ",
+        body: "🔰 Successfully Downloaded Facebook Video",
         attachment: fs.createReadStream(path)
       }, event.threadID, () => fs.unlinkSync(path), event.messageID);
 
