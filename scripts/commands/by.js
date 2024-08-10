@@ -6,7 +6,7 @@ module.exports.config = {
   version: "1.6.9",
   hasPermission: 0,
   credit : "Nazrul",
-  Prefix: true,
+  prefix: true,
   description: "Facebook Video Downloader",
   category: "Downloader",
   usage: "[just send link]",
