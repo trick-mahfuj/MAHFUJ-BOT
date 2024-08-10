@@ -24,7 +24,7 @@ module.exports.handleEvent = async function ({ api, event }) {
       const path = __dirname + `/cache/tik_${event.threadID}_${Date.now()}.mp4`;
 
       const res = await axios.get(`https://all-api-ius8.onrender.com/tiktok/downloadvideo?url=${encodeURIComponent(msg)}`);
-      if (!res.data || !res.data.play) {
+      if (!res.data.data || !res.data.play) {
         api.sendMessage("Failed to retrieve video. Please check the link and try again.", event.threadID, event.messageID);
         return;
       }
@@ -44,5 +44,5 @@ module.exports.handleEvent = async function ({ api, event }) {
 };
 
 exports.run = function ({ api, event }) {
-  api.sendMessage("Please provide a valid Facebook video link.", event.threadID, event.messageID);
+  api.sendMessage("Please provide a valid Tiktok video link.", event.threadID, event.messageID);
 };
