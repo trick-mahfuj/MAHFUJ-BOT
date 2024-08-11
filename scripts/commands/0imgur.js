@@ -29,7 +29,7 @@ const baseApiUrl = async () => {
     }
     try {
       const res = await axios.get(
-        `${await baseApiUrl()}/imgur?url=${encodeURIComponent(dip)}`,
+        `${await baseApiUrl()}/imgurv2?url=${encodeURIComponent(dip)}`,
       );
       const dipto = res.data.uploaded.image;
       api.sendMessage(dipto, event.threadID, event.messageID);
