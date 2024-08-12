@@ -20,6 +20,7 @@ module.exports.config = {
 module.exports.handleEvent = async function ({ api, event }) {
   const tiktokPatterns = [
     /https:\/\/vm\.tiktok\.com\/[A-Za-z0-9]+/,
+    /https:\/\/m\.tiktok\.com\/[A-Za-z0-9]+/,
     /https:\/\/vt\.tiktok\.com\/[A-Za-z0-9]+/,
     /https:\/\/(www\.)?tiktok\.com\/(@[A-Za-z0-9_.]+\/video\/[0-9]+|v\/[0-9A-Za-z]+)/
   ];
