@@ -1,10 +1,10 @@
 /** THIS FULL BOT COMMAND FILE AND ALL API CREATE BY ISLAMICK CYBET CHAT DONT CHINGE THE MY ANY CODE 🤙🖤📿 **/
 module.exports.config = {
-  name: "/",
+  name: "islam",
   version: "1.0.0",
   permssion: 0,
   credits: "Islamick Cyber chat",
-  prefix : false,
+  prefix : true,
   description: "Islamick post rendom",
   category: "𝐈 𝐂 𝐂",
   usages: "ig",
