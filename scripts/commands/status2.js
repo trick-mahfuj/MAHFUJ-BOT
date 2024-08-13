@@ -1,9 +1,9 @@
 module.exports.config = {
-  name: "status",
+  name: "/",
   version: "1.0.0", 
   permssion: 0,
   credits: "Islamick Cyber Chat", 
-  prefix: 'true',
+  prefix: 'false',
   description: " stutus video",
   category: "system video", 
   usages: "", 
@@ -30,7 +30,7 @@ module.exports.run = async function({ api, event, args }) {
     allimage.push(fs.createReadStream(__dirname + "/cache/img1.mp4"));
 
     {
-        msg += `°\n\n__${cp}\n\n✨🌺${Shaon}..!🍂`
+        msg += `°\n\n__${cp}\n\n🍂𝙱𝙾𝚃 𝙾𝚆𝙽𝙴𝚁 : 𝚂𝙷𝙰𝙾𝙽 𝙰𝙷𝙼𝙴𝙳...🌸`
 
     }
 
