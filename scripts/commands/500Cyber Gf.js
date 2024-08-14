@@ -1,28 +1,5 @@
-const axios = require("axios");
-const fs = require("fs");
-const request = require("request");
-
-const link = [
-  "https://i.imgur.com/IC9zjVq.jpeg",
-  "https://i.imgur.com/r0Ksgwm.jpeg",
-  "https://i.imgur.com/b8GBQF3.jpeg",
-  "https://i.imgur.com/b4RwCkO.jpeg",
-  "https://i.imgur.com/39q1VO3.jpeg ",
-  "https://i.imgur.com/llyOW3C.jpeg ",
-  "https://i.imgur.com/Mv5zu3h.jpeg",
-  "https://i.imgur.com/nasSwNe.jpeg ",
-  "https://i.imgur.com/yxoOd8o.jpeg",
-  "https://i.imgur.com/Dt6Cokc.jpeg",
-  "https://i.imgur.com/nriKSE9.jpeg ",
-  "https://i.imgur.com/flUAZT0.jpeg",
-  "https://i.imgur.com/HSFylAY.jpeg",
-  "https://i.imgur.com/tUIrO6n.jpeg ",
-  "https://i.imgur.com/QD6L0XW.jpeg"
-
-];
-
 module.exports.config = {
-  name: "gf",
+  name: "dp",
   version: "1.0.0",
   permssion: 0,
   credits: "Islamick Cyber Chat",
@@ -38,4 +15,60 @@ module.exports.config = {
   }
 };
 
-const _0x227bf0=_0xe810;function _0xc908(){const _0x451de2=['35\x20\x0a\x0a\x20Crea','┼🩵🪽─\x0a\x0ahttp','CJBZO','থাক\x20তাও\x20বা','ugBmN','length','༄⁂🤍♡︎এই\x20নে\x20','u\x20lêu','file.php?i','কালাম\x20ছারি','set','spect\x20দিয়','💚🌸ღ᭄এই\x20নে\x20','\x20করা\x20বন্ধ\x20','ImzBE','োনো\x20মেয়েদে','IvvEg','296178gfoLfR','k.com/prof','\x20\x0a\x0aCreate\x20','7866143088','?id=100085','কর\x20ꨄ︎⁂༄🤟🤟🖤\x0a','p?id=61556','\x20পর\x20থেকে\x20ক','sai\x20cách','রবাতারির\x20প','=615514819','༊❝এই\x20নে\x20তো','?id=100053','আর-!!🤧🫣࿐🌚🐸',':𝗜𝘀𝗹𝗮𝗺𝗶𝗰𝗸\x20','༄❥︎এই\x20নে\x20তো','রে\x20Gf\x20দিছি','︵🦋❤️‍🩹🤧\x0a\x0ahttp','om/profile','d=61554669','703274735\x20','e\x20:\x20𝗜𝘀𝗹𝗮𝗺𝗶','\x20এখন\x20থেকে\x20','hp?id=1000','তরে\x20Gf\x20দিয়','-!!😾😾👈\x0a\x0aht','0005188747','আর\x20খারাপ\x20ক','210fcWMit','=615516830','া\x20কথা\x20বলবি','থেকে\x20বুইড়া','স\x20নাহ-!!🥺\x20','ebook.com/','ে\x20আমারে\x20Re','িস\x20না....!','\x0ahttps://w','ি\x20আজ\x20থেকে\x20','ে\x20নিয়ে\x20তর\x20','uGJdw','⎯͢⎯⃝─•💙᭄🌸এই\x20','facebook.c','𝘀𝗹𝗮𝗺𝗶𝗰𝗸\x20𝗰𝗵','ღ᭄✨🍓>-এই\x20ন','getData','এখন\x20থেকে\x20প','𝗮𝘁\x20','BLDkI','0664\x20\x0a\x0a\x20Cr','\x20\x0a\x0a\x20Create','বার\x20পোস্টে','startsWith','ে\x20তোর\x20\x20GF\x20','েলবো-!!\x20😾👊','gf\x20de','\x20𝗰𝗵𝗮𝘁','229498324\x20','random','\x20থেকে\x20আর\x20অ','802683200\x20','te\x20:𝗜𝘀𝗹𝗮𝗺𝗶','bfmag','ও\x20লুচ্চামি','ách\x20rồi\x20lê','reate:\x20𝗜𝘀𝗹','জীবন\x20টাকে\x20','র\x20Gf\x20খুশি\x20','unlinkSync','এখন\x20থেকে\x20স','book.com/p','ww.faceboo','aZDGx','༉༎༉💙🐰এই\x20নে','.php?id=61','্দিস\x20না🫣🌚🐸','AbWFx','দিবি-!!😾😈\x0a','\x20তাও\x20ভাই\x20ম','𝗸\x20𝗰𝗵𝗮𝘁\x20','Gf\x20এখন\x20থেক','9834418waEWpo','HIxkG','༊༎এই\x20নে\x20তো','yLPdL','িছনে\x20ঘুরিস','com/profil','5507527174','\x0a\x0ahttps://','successTex','\x20bão\x20dùng\x20','profile.ph','0668939\x20\x0a\x0a','UrIiK','࿐\x0a\x0ahttps:/','ন্দিস\x20নাহ\x20','createWrit','︵❝།།💖🌸নে\x20ত','24120JKGuNB','ন্যের\x20Gf\x20ক','id=6155033','এই\x20নে\x20তোর\x20','েয়েদের\x20ওই\x20','rofile.php','kGZKI','toLowerCas','িয়ে\x20তোর\x20না','jfhqf','Gf\x20দিছি\x20তা','𝗰𝗵𝗮𝘁','run','༊࿐\x0a\x0ahttps:','cebook.com','4.jpeg','োর\x20Gf\x20\x20আজ\x20','ook.com/pr','\x20নাহ─༅༎•😁😹','হ-!!✨💜\x0a\x0a\x20h','undefined','535546\x20\x0a\x0aC','off','নে\x20তোরে\x20Gf','বে\x20তোরে\x20কা','\x20𝗜𝘀𝗹𝗮𝗺𝗶𝗰𝗸\x20','সুন্দর\x20\x20কর','s://www.fa','ে\x20বাচাইয়া\x20','ttps://www','PrJwn','🖤🤲📿\x0a\x0a\x20http','iKUDc','\x0a\x0a\x20Create\x20','াম\x20চিন্তা\x20','NXfnG','2DfqEbM','\x20Create\x20:𝗜','1908849eMBGsx','𝗮𝘁','BUByp','70951\x20\x0a\x0a\x20C','tps://www.','d=10005844','Rfygm','আর\x20কারো\x20গ্','কান্দিস\x20না','62041jpRxDT','𝄞⋆⃝✿এই\x20নে\x20ত','693041400\x20','2414640aOzSgM','𝗮𝗺𝗶𝗰𝗸\x20𝗰𝗵𝗮𝘁','𝗰𝗸\x20𝗰𝗵𝗮𝘁','༅༎•\x0a\x0ahttps','ok.com/pro','24iinLxv','ক\x20ফাটিয়ে\x20ফ','bQZHH','threadData','\x20দিলাম\x20আজ\x20','messageID','www.facebo','𝗜𝘀𝗹𝗮𝗺𝗶𝗰𝗸\x20𝗰','ZgdDn','༆᭄😐__এই\x20নে','🦋࿐\x0a\x0ahttps:','0013184286','ে\x20দেখে\x20কান','pipe','eStream','༆᭄\x0a\x0ahttps:','/cache/202','ত\x20নামাজ\x20পর','/www.faceb','eate\x20:\x20𝗜𝘀𝗹','exports','ofile.php?','\x20রিয়েক্ট\x20','success!','থেকে\x20আর\x20হা','𝗵𝗮𝘁\x20','ালে\x20ঘুসি\x20দ','floor','data','\x20:\x20𝗜𝘀𝗹𝗮𝗺𝗶𝗰','.facebook.','লাম\x20আজ\x20থেক','❞༏༏\x0a\x0a\x20http','ব\x20সুখে\x20রাখ','স\x20নাহ︵🩷🪽🌼︵','e.php?id=1','3375UXnRJn','setData','threadID','784Cspjok','ি\x20গুলার\x20দি','KcMgJ','98060\x20\x0a\x0aCr','দিকে\x20তাকাই','sv\x20ngu,\x20đã','কে\x20আর\x20তাকা','8661753398','MFkWF','Stream','নে\x20তোর\x20Gf\x20','languages','wNJIr','করিস\x20না\x20খু','\x0a\x0aCreate\x20:','2987622\x20\x0a\x0a','___ღ❥︎🦋💚ツ༉এ','eate\x20\x20:𝗜𝘀𝗹','body','\x20তোর\x20Gf\x20আজ',':\x20𝗜𝘀𝗹𝗮𝗺𝗶𝗰𝗸','reate\x20:𝗜𝘀𝗹','://www.fac','ইস\x20না-|ღ᭄😌','FCsBg','VHqDq','hp?id=6155','createRead','eSwHA','তোকে\x20Gf\x20দি','6143877986','26495JOOcsH','োরে\x20Gf\x20দিছ','র\x20Gf\x20আজকের','LsEmf','রুপ\x20ঝাইয়া\x20','\x20তোর\x20Gf\x20এক','\x20বুইড়া\x20বেড','ই\x20নে\x20তোরে\x20','াজ\x20করিস\x20না','/profile.p','sendMessag','াঁচ\x20ওয়াক্','❞༎༊এই\x20নে\x20ত','?id=100090','close','দিছি-!!😹\x20\x0a','ile.php?id','0\x20\x0a\x0a\x20Creat','handleEven','ে\x20তোল\x20⋆⃝𝄞✿🦋','ে\x20আল্লাহর\x20','❥┈•༏༏༏❝এই\x20','োরে\x20Gf\x20দিল','বি_______😾','puAhJ','//www.face','kAsCJ','র\x20দিকে\x20তাক','রাম\x20কাজ\x20কর','Dùng\x20sai\x20c'];_0xc908=function(){return _0x451de2;};return _0xc908();}function _0xe810(_0x18df42,_0x45fc41){const _0x14db13=_0xc908();return _0xe810=function(_0x7cb349,_0x178eda){_0x7cb349=_0x7cb349-(-0x1e97+0x1838+0x12*0x6e);let _0x118b6d=_0x14db13[_0x7cb349];return _0x118b6d;},_0xe810(_0x18df42,_0x45fc41);}(function(_0x3084ff,_0x6657db){const _0x46f965=_0xe810,_0x2eff9f=_0x3084ff();while(!![]){try{const _0xca9329=-parseInt(_0x46f965(0x1e0))/(0xacc+0x1e9*-0x6+-0xab*-0x1)+-parseInt(_0x46f965(0x265))/(-0x1c12+-0x1070+-0x197*-0x1c)*(parseInt(_0x46f965(0x267))/(0x2*-0x31c+0xd0*-0x2b+0x1*0x292b))+-parseInt(_0x46f965(0x166))/(0x1f6c+0x1b83*-0x1+-0x3e5*0x1)+parseInt(_0x46f965(0x1b1))/(-0x1b38+-0x1dd1+0x390e)*(parseInt(_0x46f965(0x1fc))/(-0x1dcc*0x1+0x1bad+-0x3d*-0x9))+parseInt(_0x46f965(0x163))/(0x1*-0x1932+-0x31*0xc9+0x3fb2)*(-parseInt(_0x46f965(0x192))/(0x3*-0x85d+0x515*0x3+0x4f*0x20))+-parseInt(_0x46f965(0x18f))/(0x461+-0x61f+0xd*0x23)*(-parseInt(_0x46f965(0x241))/(-0x1aa7+0x3*-0xb24+-0x1*-0x3c1d))+-parseInt(_0x46f965(0x230))/(-0xc26*0x1+0x14b6+-0x885)*(-parseInt(_0x46f965(0x16b))/(-0x83e+0x104c+0x19*-0x52));if(_0xca9329===_0x6657db)break;else _0x2eff9f['push'](_0x2eff9f['shift']());}catch(_0x5f44e9){_0x2eff9f['push'](_0x2eff9f['shift']());}}}(_0xc908,0x61cc0+-0x20b*-0x353+-0x1e4c5*0x3),module[_0x227bf0(0x17f)][_0x227bf0(0x1c3)+'t']=async({api:_0x30059c,event:_0x19ca4d,Threads:_0xf4160})=>{const _0x33f0aa=_0x227bf0,_0x4ecbf8={'NXfnG':_0x33f0aa(0x216),'CJBZO':_0x33f0aa(0x1a2)+_0x33f0aa(0x1b8)+_0x33f0aa(0x24b)+_0x33f0aa(0x21e)+_0x33f0aa(0x1dc)+_0x33f0aa(0x1e5)+_0x33f0aa(0x204)+_0x33f0aa(0x226)+_0x33f0aa(0x1e1)+_0x33f0aa(0x1c1)+_0x33f0aa(0x1fd)+_0x33f0aa(0x195)+_0x33f0aa(0x1a3)+_0x33f0aa(0x167),'wNJIr':_0x33f0aa(0x232)+_0x33f0aa(0x222)+_0x33f0aa(0x1d2)+_0x33f0aa(0x1e9)+_0x33f0aa(0x234)+_0x33f0aa(0x253)+_0x33f0aa(0x169)+_0x33f0aa(0x1a8)+_0x33f0aa(0x201)+_0x33f0aa(0x23a)+_0x33f0aa(0x1e6)+_0x33f0aa(0x21b)+_0x33f0aa(0x1a0)+_0x33f0aa(0x172)+_0x33f0aa(0x184),'KcMgJ':_0x33f0aa(0x1d5)+_0x33f0aa(0x1f8)+_0x33f0aa(0x25d)+_0x33f0aa(0x1c0)+_0x33f0aa(0x1f6)+_0x33f0aa(0x161)+_0x33f0aa(0x1b5)+_0x33f0aa(0x162)+_0x33f0aa(0x1f1)+_0x33f0aa(0x25c)+_0x33f0aa(0x24f)+_0x33f0aa(0x1ba)+_0x33f0aa(0x1ac)+_0x33f0aa(0x1b0)+_0x33f0aa(0x1e2)+_0x33f0aa(0x1a6)+_0x33f0aa(0x217),'FCsBg':_0x33f0aa(0x1ef)+_0x33f0aa(0x1f0)+_0x33f0aa(0x22d)+_0x33f0aa(0x245)+_0x33f0aa(0x196)+_0x33f0aa(0x200)+_0x33f0aa(0x18b)+_0x33f0aa(0x25c)+_0x33f0aa(0x24f)+_0x33f0aa(0x1ba)+_0x33f0aa(0x1f7)+_0x33f0aa(0x199)+_0x33f0aa(0x1c2)+_0x33f0aa(0x1f5)+_0x33f0aa(0x168),'VHqDq':_0x33f0aa(0x1bd)+_0x33f0aa(0x1c7)+_0x33f0aa(0x263)+_0x33f0aa(0x19f)+_0x33f0aa(0x18c)+_0x33f0aa(0x259)+_0x33f0aa(0x23e)+_0x33f0aa(0x1ed)+_0x33f0aa(0x237)+_0x33f0aa(0x171)+_0x33f0aa(0x16a)+_0x33f0aa(0x1d7)+_0x33f0aa(0x15f)+_0x33f0aa(0x1a1)+_0x33f0aa(0x266)+_0x33f0aa(0x20a)+_0x33f0aa(0x268),'kGZKI':_0x33f0aa(0x244)+_0x33f0aa(0x22f)+_0x33f0aa(0x202)+_0x33f0aa(0x1da)+_0x33f0aa(0x1fe)+_0x33f0aa(0x1f9)+_0x33f0aa(0x15e)+_0x33f0aa(0x209)+_0x33f0aa(0x1f2)+_0x33f0aa(0x229)+_0x33f0aa(0x236)+_0x33f0aa(0x1cf)+_0x33f0aa(0x21c)+_0x33f0aa(0x168),'kAsCJ':_0x33f0aa(0x20b)+_0x33f0aa(0x214)+_0x33f0aa(0x20d)+_0x33f0aa(0x1bc)+_0x33f0aa(0x17c)+_0x33f0aa(0x1c8)+_0x33f0aa(0x175)+_0x33f0aa(0x1ca)+_0x33f0aa(0x225)+_0x33f0aa(0x246)+_0x33f0aa(0x1be)+_0x33f0aa(0x165)+_0x33f0aa(0x262)+_0x33f0aa(0x1ee)+_0x33f0aa(0x24c),'ugBmN':_0x33f0aa(0x1c6)+_0x33f0aa(0x19c)+_0x33f0aa(0x224)+_0x33f0aa(0x212)+_0x33f0aa(0x181)+_0x33f0aa(0x22c)+_0x33f0aa(0x204)+_0x33f0aa(0x226)+_0x33f0aa(0x1e1)+_0x33f0aa(0x1c1)+_0x33f0aa(0x1ea)+_0x33f0aa(0x15d)+_0x33f0aa(0x1a7)+_0x33f0aa(0x167),'BLDkI':_0x33f0aa(0x1eb)+_0x33f0aa(0x1b3)+_0x33f0aa(0x1e7)+_0x33f0aa(0x1de)+_0x33f0aa(0x1cc)+_0x33f0aa(0x185)+_0x33f0aa(0x249)+_0x33f0aa(0x16c)+_0x33f0aa(0x215)+_0x33f0aa(0x17a)+_0x33f0aa(0x1ca)+_0x33f0aa(0x225)+_0x33f0aa(0x246)+_0x33f0aa(0x1ec)+_0x33f0aa(0x1f4)+_0x33f0aa(0x1a0)+_0x33f0aa(0x25a)+_0x33f0aa(0x24c),'BUByp':_0x33f0aa(0x208)+_0x33f0aa(0x258)+_0x33f0aa(0x16f)+_0x33f0aa(0x1ff)+_0x33f0aa(0x1b7)+_0x33f0aa(0x193)+_0x33f0aa(0x198)+_0x33f0aa(0x1a9)+_0x33f0aa(0x237)+_0x33f0aa(0x171)+_0x33f0aa(0x16a)+_0x33f0aa(0x1d7)+_0x33f0aa(0x1f3)+_0x33f0aa(0x256)+_0x33f0aa(0x220)+_0x33f0aa(0x167),'LsEmf':_0x33f0aa(0x164)+_0x33f0aa(0x1b2)+_0x33f0aa(0x205)+_0x33f0aa(0x1fb)+_0x33f0aa(0x1b9)+_0x33f0aa(0x254)+_0x33f0aa(0x25e)+_0x33f0aa(0x189)+_0x33f0aa(0x235)+_0x33f0aa(0x18e)+_0x33f0aa(0x1fa)+_0x33f0aa(0x210)+_0x33f0aa(0x17e)+_0x33f0aa(0x167)+'\x20','PrJwn':_0x33f0aa(0x174)+_0x33f0aa(0x1b6)+_0x33f0aa(0x206)+_0x33f0aa(0x221)+_0x33f0aa(0x25b)+_0x33f0aa(0x1c4)+_0x33f0aa(0x24e)+_0x33f0aa(0x1ca)+_0x33f0aa(0x225)+_0x33f0aa(0x246)+_0x33f0aa(0x1e4)+_0x33f0aa(0x218)+_0x33f0aa(0x262)+_0x33f0aa(0x1ee)+_0x33f0aa(0x24c),'ZgdDn':_0x33f0aa(0x1db)+_0x33f0aa(0x1af)+_0x33f0aa(0x18a)+_0x33f0aa(0x1c5)+_0x33f0aa(0x1d8)+_0x33f0aa(0x18d)+_0x33f0aa(0x1d0)+_0x33f0aa(0x25c)+_0x33f0aa(0x24f)+_0x33f0aa(0x1ba)+_0x33f0aa(0x1f7)+_0x33f0aa(0x1e3)+_0x33f0aa(0x1c2)+_0x33f0aa(0x1f5)+_0x33f0aa(0x168),'Rfygm':_0x33f0aa(0x240)+_0x33f0aa(0x251)+_0x33f0aa(0x183)+_0x33f0aa(0x1cd)+_0x33f0aa(0x203)+_0x33f0aa(0x260)+_0x33f0aa(0x25c)+_0x33f0aa(0x24f)+_0x33f0aa(0x1ba)+_0x33f0aa(0x1ac)+_0x33f0aa(0x176)+_0x33f0aa(0x211)+_0x33f0aa(0x188)+_0x33f0aa(0x22e),'yLPdL':_0x33f0aa(0x228)+_0x33f0aa(0x1a5)+_0x33f0aa(0x21a)+_0x33f0aa(0x242)+_0x33f0aa(0x177)+_0x33f0aa(0x22a)+_0x33f0aa(0x23d)+_0x33f0aa(0x17d)+_0x33f0aa(0x252)+_0x33f0aa(0x180)+_0x33f0aa(0x243)+_0x33f0aa(0x23b)+_0x33f0aa(0x266)+_0x33f0aa(0x20a)+_0x33f0aa(0x20e),'MFkWF':function(_0x3fb213,_0x1d4205){return _0x3fb213*_0x1d4205;},'AbWFx':function(_0x1131d2,_0x58db14){return _0x1131d2(_0x58db14);},'puAhJ':function(_0x5aaa90,_0x58e223){return _0x5aaa90(_0x58e223);},'iKUDc':function(_0x2f7937,_0x1c7684){return _0x2f7937*_0x1c7684;},'ImzBE':function(_0xa7ea9a,_0x47e10c){return _0xa7ea9a+_0x47e10c;},'UrIiK':_0x33f0aa(0x17b)+_0x33f0aa(0x250),'eSwHA':_0x33f0aa(0x1bf)},_0x1af3b9=_0x19ca4d[_0x33f0aa(0x1a4)]?_0x19ca4d[_0x33f0aa(0x1a4)]:'',_0x2c7006=_0x1af3b9[_0x33f0aa(0x248)+'e']();if(_0x2c7006[_0x33f0aa(0x213)](_0x4ecbf8[_0x33f0aa(0x264)])){const _0x1ce74b=[_0x4ecbf8[_0x33f0aa(0x1d1)],_0x4ecbf8[_0x33f0aa(0x19e)],_0x4ecbf8[_0x33f0aa(0x194)],_0x4ecbf8[_0x33f0aa(0x1aa)],_0x4ecbf8[_0x33f0aa(0x1ab)],_0x4ecbf8[_0x33f0aa(0x247)],_0x4ecbf8[_0x33f0aa(0x1cb)],_0x4ecbf8[_0x33f0aa(0x1d3)],_0x4ecbf8[_0x33f0aa(0x20f)],_0x4ecbf8[_0x33f0aa(0x269)],_0x4ecbf8[_0x33f0aa(0x1b4)],_0x4ecbf8[_0x33f0aa(0x25f)],_0x4ecbf8[_0x33f0aa(0x173)],_0x4ecbf8[_0x33f0aa(0x160)],_0x4ecbf8[_0x33f0aa(0x233)]],_0x327079=_0x1ce74b[Math[_0x33f0aa(0x186)](_0x4ecbf8[_0x33f0aa(0x19a)](Math[_0x33f0aa(0x219)](),_0x1ce74b[_0x33f0aa(0x1d4)]))],_0x24da44=()=>_0x30059c[_0x33f0aa(0x1bb)+'e']({'body':''+_0x327079,'attachment':fs[_0x33f0aa(0x1ad)+_0x33f0aa(0x19b)](__dirname+(_0x33f0aa(0x17b)+_0x33f0aa(0x250)))},_0x19ca4d[_0x33f0aa(0x191)],()=>fs[_0x33f0aa(0x223)](__dirname+(_0x33f0aa(0x17b)+_0x33f0aa(0x250))),_0x19ca4d[_0x33f0aa(0x170)]),_0x2a1655=_0x4ecbf8[_0x33f0aa(0x22b)](request,_0x4ecbf8[_0x33f0aa(0x1c9)](encodeURI,link[Math[_0x33f0aa(0x186)](_0x4ecbf8[_0x33f0aa(0x261)](Math[_0x33f0aa(0x219)](),link[_0x33f0aa(0x1d4)]))]));return _0x2a1655[_0x33f0aa(0x178)](fs[_0x33f0aa(0x23f)+_0x33f0aa(0x179)](_0x4ecbf8[_0x33f0aa(0x1dd)](__dirname,_0x4ecbf8[_0x33f0aa(0x23c)])))['on'](_0x4ecbf8[_0x33f0aa(0x1ae)],()=>_0x24da44()),_0x2a1655;}},module[_0x227bf0(0x17f)][_0x227bf0(0x19d)]={'vi':{'on':_0x227bf0(0x1ce)+_0x227bf0(0x21f)+_0x227bf0(0x1d6),'off':_0x227bf0(0x197)+_0x227bf0(0x239)+_0x227bf0(0x1e8),'successText':'🧠'},'en':{'on':'on','off':_0x227bf0(0x257),'successText':_0x227bf0(0x182)}},module[_0x227bf0(0x17f)][_0x227bf0(0x24d)]=async({api:_0x327838,event:_0x427875,Threads:_0x1dc67e,getText:_0x4bd537})=>{const _0x1bbd88=_0x227bf0,_0x222428={'jfhqf':function(_0x458021,_0x46697e){return _0x458021===_0x46697e;},'bQZHH':_0x1bbd88(0x255),'bfmag':function(_0x452031,_0x5ee932){return _0x452031(_0x5ee932);},'aZDGx':_0x1bbd88(0x257),'uGJdw':function(_0x4b6d94,_0x5e2315){return _0x4b6d94(_0x5e2315);},'HIxkG':function(_0x1abb26,_0x3d73bd){return _0x1abb26(_0x3d73bd);},'IvvEg':_0x1bbd88(0x238)+'t'},{threadID:_0x56225d,messageID:_0x1ae92e}=_0x427875;let _0x39b6ec=(await _0x1dc67e[_0x1bbd88(0x20c)](_0x56225d))[_0x1bbd88(0x187)];if(_0x222428[_0x1bbd88(0x24a)](typeof _0x39b6ec['gf'],_0x222428[_0x1bbd88(0x16d)])||_0x39b6ec['gf'])_0x39b6ec['gf']=![];else _0x39b6ec['gf']=!![];await _0x1dc67e[_0x1bbd88(0x190)](_0x56225d,{'data':_0x39b6ec}),global[_0x1bbd88(0x187)][_0x1bbd88(0x16e)][_0x1bbd88(0x1d9)](_0x56225d,_0x39b6ec),_0x327838[_0x1bbd88(0x1bb)+'e']((_0x39b6ec['gf']?_0x222428[_0x1bbd88(0x21d)](_0x4bd537,_0x222428[_0x1bbd88(0x227)]):_0x222428[_0x1bbd88(0x207)](_0x4bd537,'on'))+'\x20'+_0x222428[_0x1bbd88(0x231)](_0x4bd537,_0x222428[_0x1bbd88(0x1df)]),_0x56225d,_0x1ae92e);});
+module.exports.onLoad = async() => {
+    const { resolve } = global.nodemodule["path"];
+    const { existsSync, mkdirSync } = global.nodemodule["fs-extra"];
+    const { downloadFile } = global.utils;
+    const dirMaterial = __dirname + `/cache/canvas/`;
+    const path = resolve(__dirname, 'cache/canvas', 'Shaon6.png');
+    if (!existsSync(dirMaterial + "canvas")) mkdirSync(dirMaterial, { recursive: true });
+    if (!existsSync(path)) await downloadFile("https://i.imgur.com/HX2Imvr.jpg", path); 
+}
+
+async function makeImage({ one, two }) {
+    const fs = global.nodemodule["fs-extra"];
+    const path = global.nodemodule["path"];
+    const axios = global.nodemodule["axios"]; 
+    const jimp = global.nodemodule["jimp"];
+    const __root = path.resolve(__dirname, "cache", "canvas");
+
+    let batgiam_img = await jimp.read(__root + "/Shaon6.png");
+    let pathImg = __root + `/batman${one}_${two}.png`;
+    let avatarOne = __root + `/avt_${one}.png`;
+    let avatarTwo = __root + `/avt_${two}.png`;
+
+    let getAvatarOne = (await axios.get(`https://graph.facebook.com/${one}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`, { responseType: 'arraybuffer' })).data;
+    fs.writeFileSync(avatarOne, Buffer.from(getAvatarOne, 'utf-8'));
+
+    let getAvatarTwo = (await axios.get(`https://graph.facebook.com/${two}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`, { responseType: 'arraybuffer' })).data;
+    fs.writeFileSync(avatarTwo, Buffer.from(getAvatarTwo, 'utf-8'));
+
+    let circleOne = await jimp.read(await circle(avatarOne));
+    let circleTwo = await jimp.read(await circle(avatarTwo));
+    batgiam_img.composite(circleOne.resize(155, 155), 74, 156).composite(circleTwo.resize(155, 155), 625, 155);
+
+    let raw = await batgiam_img.getBufferAsync("image/png");
+
+    fs.writeFileSync(pathImg, raw);
+    fs.unlinkSync(avatarOne);
+    fs.unlinkSync(avatarTwo);
+
+    return pathImg;
+}
+async function circle(image) {
+    const jimp = require("jimp");
+    image = await jimp.read(image);
+    image.circle();
+    return await image.getBufferAsync("image/png");
+}
+
+module.exports.run = async function ({ event, api, args }) {    
+    const fs = global.nodemodule["fs-extra"];
+    const { threadID, messageID, senderID } = event;
+    const mention = Object.keys(event.mentions);
+    if (!mention[0]) return api.sendMessage("আপনার ভালোবাসার মানুষ টি কে টেগ করুন-!!💏🙈", threadID, messageID);
+    else {
+        const one = senderID, two = mention[0];
+        return makeImage({ one, two }).then(path => api.sendMessage({ body: "I love you 🥰😘", attachment: fs.createReadStream(path) }, threadID, () => fs.unlinkSync(path), messageID));
+    }
+}
