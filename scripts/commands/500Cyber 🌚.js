@@ -1,14 +1,5 @@
-const axios = require("axios");
-const fs = require("fs");
-const request = require("request");
-
-const link = [
-  "https://i.imgur.com/ITUodvk.mp4",
-
-];
-
 module.exports.config = {
-  name: "🌚",
+  name: "dp6",
   version: "1.0.0",
   permssion: 0,
   credits: "Islamick Cyber Chat",
@@ -24,47 +15,60 @@ module.exports.config = {
   }
 };
 
-module.exports.handleEvent = async ({ api, event, Threads }) => {
-  const content = event.body ? event.body : '';
-    const body = content.toLowerCase();
-  if (body.startsWith("🌚")) {
-    const rahad = [
-      "•┄┅════❁🌺❁════┅┄•\n \n __আপনি মারফত এর চোখ দিয়ে দেখলে বুঝতে পারবেন বিশ্ব আগাচ্ছে ঠিকি কিন্তু কিয়ামত এর দিকে-!!🪐🌚🥲\n\n•┄┅════❁🌺❁════┅┄•",
-      "•┄┅════❁🌺❁════┅┄•\n\n __আপনি মারফত এর চোখ দিয়ে দেখলে বুঝতে পারবেন বিশ্ব আগাচ্ছে ঠিকি কিন্তু কিয়ামত এর দিকে-!!🪐🌚🥲\n\n•┄┅════❁🌺❁════┅┄•"
+module.exports.onLoad = async() => {
+    const { resolve } = global.nodemodule["path"];
+    const { existsSync, mkdirSync } = global.nodemodule["fs-extra"];
+    const { downloadFile } = global.utils;
+    const dirMaterial = __dirname + `/cache/canvas/`;
+    const path = resolve(__dirname, 'cache/canvas', 'Shaon4.png');
+    if (!existsSync(dirMaterial + "canvas")) mkdirSync(dirMaterial, { recursive: true });
+    if (!existsSync(path)) await downloadFile("https://i.imgur.com/BL5RtvN.jpg", path); 
+}
 
-    ];
-    const rahad2 = rahad[Math.floor(Math.random() * rahad.length)];
+async function makeImage({ one, two }) {
+    const fs = global.nodemodule["fs-extra"];
+    const path = global.nodemodule["path"];
+    const axios = global.nodemodule["axios"]; 
+    const jimp = global.nodemodule["jimp"];
+    const __root = path.resolve(__dirname, "cache", "canvas");
 
-    const callback = () => api.sendMessage({
-      body: `${rahad2}`,
-      attachment: fs.createReadStream(__dirname + "/cache/2024.mp4")
-    }, event.threadID, () => fs.unlinkSync(__dirname + "/cache/2024.mp4"), event.messageID);
+    let batgiam_img = await jimp.read(__root + "/Shaon4.png");
+    let pathImg = __root + `/batman${one}_${two}.png`;
+    let avatarOne = __root + `/avt_${one}.png`;
+    let avatarTwo = __root + `/avt_${two}.png`;
+    
+    let getAvatarOne = (await axios.get(`https://graph.facebook.com/${one}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`, { responseType: 'arraybuffer' })).data;
+    fs.writeFileSync(avatarOne, Buffer.from(getAvatarOne, 'utf-8'));
+    
+    let getAvatarTwo = (await axios.get(`https://graph.facebook.com/${two}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`, { responseType: 'arraybuffer' })).data;
+    fs.writeFileSync(avatarTwo, Buffer.from(getAvatarTwo, 'utf-8'));
+    
+    let circleOne = await jimp.read(await circle(avatarOne));
+    let circleTwo = await jimp.read(await circle(avatarTwo));
+    batgiam_img.composite(circleOne.resize(190, 190), 54, 144).composite(circleTwo.resize(190, 190), 609, 145);
+    
+    let raw = await batgiam_img.getBufferAsync("image/png");
+    
+    fs.writeFileSync(pathImg, raw);
+    fs.unlinkSync(avatarOne);
+    fs.unlinkSync(avatarTwo);
+    
+    return pathImg;
+}
+async function circle(image) {
+    const jimp = require("jimp");
+    image = await jimp.read(image);
+    image.circle();
+    return await image.getBufferAsync("image/png");
+}
 
-    const requestStream = request(encodeURI(link[Math.floor(Math.random() * link.length)]));
-    requestStream.pipe(fs.createWriteStream(__dirname + "/cache/2024.mp4")).on("close", () => callback());
-    return requestStream;
-  }
-};
-
-module.exports.languages = {
-  "vi": {
-    "on": "Dùng sai cách rồi lêu lêu",
-    "off": "sv ngu, đã bão dùng sai cách",
-    "successText": `🧠`,
-  },
-  "en": {
-    "on": "on",
-    "off": "off",
-    "successText": "success!",
-  }
-};
-
-module.exports.run = async ({ api, event, Threads, getText }) => {
-  const { threadID, messageID } = event;
-  let data = (await Threads.getData(threadID)).data;
-  if (typeof data["🌚"] === "undefined" || data["🌚"]) data["🌚"] = false;
-  else data["🌚"] = true;
-  await Threads.setData(threadID, { data });
-  global.data.threadData.set(threadID, data);
-  api.sendMessage(`${(data["🌚"]) ? getText("off") : getText("on")} ${getText("successText")}`, threadID, messageID);
-};
+module.exports.run = async function ({ event, api, args }) {    
+    const fs = global.nodemodule["fs-extra"];
+    const { threadID, messageID, senderID } = event;
+    const mention = Object.keys(event.mentions);
+    if (!mention[0]) return api.sendMessage("Please mention 1 person.", threadID, messageID);
+    else {
+        const one = senderID, two = mention[0];
+        return makeImage({ one, two }).then(path => api.sendMessage({ body: "I love you 🥰😘", attachment: fs.createReadStream(path) }, threadID, () => fs.unlinkSync(path), messageID));
+    }
+}
