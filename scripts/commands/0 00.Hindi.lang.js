@@ -28,7 +28,7 @@ module.exports.run = async function ({ api, event, args }) {
     const convertTo12Hour = t => `${(h=t.split(':')[0]%12||12)}:${t.split(':')[1]} ${h>=12?'PM':'AM'}`;
     const formattedTimings = Object.fromEntries(Object.entries(timings).map(([k, v]) => [k, convertTo12Hour(v)]));
 
-    const { data: { url: { url: videoUrl } } } = await axios.get(`$Shaon}/video/status2`);
+    const { data: { url: { url: videoUrl } } } = await axios.get(`${Shaon}/video/status2`);
     const videoBuffer = await axios.get(videoUrl, { responseType: 'arraybuffer' });
     const videoPath = `${__dirname}/cache/video.mp4`;
 
