@@ -8,7 +8,7 @@ module.exports.config = {
   version: "11.9.7",
   permssion: 0,
   credits: "Shaon Ahmed",
-  prefix:true,
+  prefix:false,
   description: "SIM",
   category: "Smi",
   usages: "janu",
