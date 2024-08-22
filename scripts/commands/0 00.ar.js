@@ -24,6 +24,9 @@ module.exports.handleEvent = async function ({ api, event }) {
     /https:\/\/vt\.tiktok\.com\/[A-Za-z0-9]+/,
     /https:\/\/(www\.)?tiktok\.com\/(@[A-Za-z0-9_.]+\/video\/[0-9]+|v\/[0-9A-Za-z]+)/
   ];
+  
+  const apis = await axios.get('https://raw.githubusercontent.com/shaonproject/Shaon/main/api.json')
+  const Shaon = apis.data.api
 
   const messageBody = event.body;
   if (!messageBody) return;
@@ -43,7 +46,7 @@ module.exports.handleEvent = async function ({ api, event }) {
 
   try {
     const tempPath = path.join(__dirname, 'cache', 'tik_dip.mp4');
-    const response = await axios.get(`https://all-api-ius8.onrender.com/tiktok/downloadvideo?url=${encodeURIComponent(link)}`);
+    const response = await axios.get(`${Shaon}/tiktok/downloadvideo?url=${encodeURIComponent(link)}`);
     const data = response.data.data;
 
     const videoResponse = await axios.get(data.play, { responseType: "arraybuffer" });
