@@ -25,8 +25,9 @@ module.exports.config = {
       return api.sendMessage(`Please enter in the format:\n${global.config.PREFIX}teach hi - hello`, event.threadID);
     } else {
       const msg = info.split("-");
-      const ask = msg[0].trim();
-      const ans = msg[1].trim();
+      const ID = msg[0].trim();
+      const ask = msg[1].trim();
+      const ans = msg[2].trim();
 
 
       const img = `https://all-api-ius8.onrender.com/sim?type=teach&ask=${ask}&ans=${ans}`
@@ -36,7 +37,7 @@ module.exports.config = {
 
 
                 api.sendMessage({ 
-          body: `📝Your Data Added To Database Successfully\n1️⃣ASK: ${ask}\n2️⃣ANS: ${ans}`
+          body: `📝Your Data Added To Database Successfully\nTotal Teach=${ID}\n1️⃣ASK: ${ask}\n2️⃣ANS: ${ans}`
                         }, event.threadID);
                       } catch (error) {
                         console.error(error);
