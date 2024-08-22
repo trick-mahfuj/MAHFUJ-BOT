@@ -17,10 +17,14 @@ module.exports.config = {
 
 module.exports.run = async ({ api, event,args }) => {
 const axios = require("axios");
+
+const apis = await axios.get('https://raw.githubusercontent.com/shaonproject/Shaon/main/api.json')
+  const Shaon = apis.data.api
+  
 let query = args.join(" ");
 if (!query)
     return api.sendMessage(`হুম জান বলো কি বলবা-!!❤️✌️`, event.threadID, event.messageID);
-const res = await axios.get(`https://all-api-ius8.onrender.com/sim?type=ask&ask=${query}`);
+const res = await axios.get(`${Shaon}/sim?type=ask&ask=${query}`);
 var plaintext = res.data.answer;
 api.sendMessage(plaintext, event.threadID, event.messageID)
 }
