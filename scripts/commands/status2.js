@@ -15,12 +15,15 @@ module.exports.run = async function({ api, event, args }) {
     const axios = require("axios")
     const request = require("request")
     const fs = require("fs-extra")
-    const res = await axios.get(`https://all-api-ius8.onrender.com/video/status2`);
+    const apis = await axios.get('https://raw.githubusercontent.com/shaonproject/Shaon/main/api.json')
+  const Shaon = apis.data.api
+  
+    const res = await axios.get(`${Shaon}/video/status2`);
     var data = res.data.data;
     var msg = [];
     let img1 = `${res.data.url.url}`;
     let cp = `${res.data.url.title}`
-    let Shaon = `${res.data.author}`
+    let Shaon1 = `${res.data.author}`
 
     let imgs1 = (await axios.get(`${img1}`, {
         responseType: 'arraybuffer'
