@@ -1,5 +1,5 @@
 module.exports.config = {
-  name: "randommix",
+  name: "random",
   version: "11.9.7",
   permssion: 0,
   credits: "Islamick Cyber Chat",
@@ -14,22 +14,24 @@ module.exports.run = async function({ api, event }) {
   const axios = require('axios');
   const request = require('request');
   const fs = require("fs");
-  var shaon = ["https://all-api-ius8.onrender.com/video/status",
-"https://all-api-ius8.onrender.com/video/sad",
-"https://all-api-ius8.onrender.com/video/baby",
-"https://all-api-ius8.onrender.com/video/love",
-"https://all-api-ius8.onrender.com/video/ff",
-"https://all-api-ius8.onrender.com/video/shairi",
-"https://all-api-ius8.onrender.com/video/humaiyun",
-"https://all-api-ius8.onrender.com/video/islam",
-"https://all-api-ius8.onrender.com/video/anime",
-"https://all-api-ius8.onrender.com/video/short",
-"https://all-api-ius8.onrender.com/video/event",
-"https://all-api-ius8.onrender.com/video/prefix",
-"https://all-api-ius8.onrender.com/video/cpl",
-"https://all-api-ius8.onrender.com/video/time",
-"https://all-api-ius8.onrender.com/video/lofi",
-"https://all-api-ius8.onrender.com/video/happy"
+  const apis = await axios.get('https://raw.githubusercontent.com/shaonproject/Shaon/main/api.json')
+  const video = apis.data.api
+  var shaon = [`${video}/video/status`,
+`${video}/video/sad`,
+`${video}/video/baby`,
+`${video}/video/love`,
+`${video}/video/ff`,
+`${video}/video/shairi`,
+`${video}/video/humaiyun`,
+`${video}/video/islam`,
+`${video}/video/anime`,
+`${video}/video/short`,
+`${video}/video/event`,
+`${video}/video/prefix`,
+`${video}/video/cpl`,
+`${video}/video/time`,
+`${video}/video/lofi`,
+`${video}/video/happy`
 ]
   var shaon1 = shaon[Math.floor(Math.random() * shaon.length)]
   axios.get(shaon1).then(res => {
