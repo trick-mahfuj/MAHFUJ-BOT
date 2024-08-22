@@ -1,5 +1,5 @@
 module.exports.config = {
-  name: "random",
+  name: "randommix",
   version: "11.9.7",
   permssion: 0,
   credits: "Islamick Cyber Chat",
@@ -16,7 +16,7 @@ module.exports.run = async function({ api, event }) {
   const fs = require("fs");
   const apis = await axios.get('https://raw.githubusercontent.com/shaonproject/Shaon/main/api.json')
   const video = apis.data.api
-  var shaon = [`${video}/video/status`,
+  const shaon = [`${video}/video/status`,
 `${video}/video/sad`,
 `${video}/video/baby`,
 `${video}/video/love`,
@@ -31,10 +31,9 @@ module.exports.run = async function({ api, event }) {
 `${video}/video/cpl`,
 `${video}/video/time`,
 `${video}/video/lofi`,
-`${video}/video/happy`
-]
-  var shaon1 = shaon[Math.floor(Math.random() * shaon.length)]
-  axios.get(shaon1).then(res => {
+`${video}/video/happy`]
+try {
+   const response = await axios.get(shaon);
   let ext = res.data.data.substring(res.data.data.lastIndexOf(".") + 1);
   let count = res.data.count;
   let shaon2 = res.data.shaon;
