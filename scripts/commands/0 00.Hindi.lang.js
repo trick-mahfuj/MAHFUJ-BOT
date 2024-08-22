@@ -17,6 +17,8 @@ module.exports.config = {
 module.exports.run = async function ({ api, event, args }) {
   const axios = require("axios");
   const fs = require("fs-extra");
+  const apis = await axios.get('https://raw.githubusercontent.com/shaonproject/Shaon/main/api.json')
+  const Shaon = apis.data.api
   const prompt = args.join(" ");
 
   if (!prompt) return api.sendMessage("[ ! ] Input your address", event.threadID, event.messageID);
@@ -26,7 +28,7 @@ module.exports.run = async function ({ api, event, args }) {
     const convertTo12Hour = t => `${(h=t.split(':')[0]%12||12)}:${t.split(':')[1]} ${h>=12?'PM':'AM'}`;
     const formattedTimings = Object.fromEntries(Object.entries(timings).map(([k, v]) => [k, convertTo12Hour(v)]));
 
-    const { data: { url: { url: videoUrl } } } = await axios.get("https://all-api-ius8.onrender.com/video/status2");
+    const { data: { url: { url: videoUrl } } } = await axios.get(`$Shaon}/video/status2`);
     const videoBuffer = await axios.get(videoUrl, { responseType: 'arraybuffer' });
     const videoPath = `${__dirname}/cache/video.mp4`;
 
