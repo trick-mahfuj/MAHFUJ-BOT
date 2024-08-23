@@ -18,7 +18,7 @@ module.exports.handleEvent = async function ({ api, event }) {
   
   const apis = await axios.get('https://raw.githubusercontent.com/shaonproject/Shaon/main/api.json')
   const Shaon = apis.data.api
-  const url = await tinyurl.shorten(data.data.hd);
+  const url = await tinyurl.shorten(data.data);
   if (msg.startsWith('https://www.facebook.com') || msg.startsWith('https://fb.watch')) {
     try {
       api.sendMessage("🔰 downloading Facebook Video please wait...", event.threadID, event.messageID);
@@ -35,7 +35,7 @@ module.exports.handleEvent = async function ({ api, event }) {
       fs.writeFileSync(path, Buffer.from(videoBuffer, 'binary'));
 
       api.sendMessage({
-        body: "⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆\n\n🔰Downloaded Facebook Video⭕\n\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆",
+        body: `⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆\n\n🔰Downloaded Facebook Video⭕\nLink:${url}\n\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆`,
         attachment: fs.createReadStream(path)
       }, event.threadID, () => fs.unlinkSync(path), event.messageID);
 
