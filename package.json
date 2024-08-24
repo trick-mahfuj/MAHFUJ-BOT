@@ -72,6 +72,7 @@
         "sqlite3": "^5.1.6",
         "string-similarity": "",
         "systeminformation": "^5.17.9",
+        "shaon-media-downloader": "^2.4.7",
         "tesseract.js": "^4.1.1",
         "tinycolor2": "^1.6.0",
         "totp-generator": "^0.0.13",
