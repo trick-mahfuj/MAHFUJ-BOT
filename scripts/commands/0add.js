@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 module.exports.config = {
-  name: "videoadd",
+  name: "add",
   version: "11.9.7",
   permission: 0,
   credits: "Islamick Cyber Chat",
@@ -22,7 +22,7 @@ module.exports.run = async ({ api, event, args }) => {
     }
 
     const response = await axios.get(`https://all-api-ius8.onrender.com/video/random?name=${encodeURIComponent(videoName)}&url=${encodeURIComponent(imageUrl)}`);
-    api.sendMessage(`Request successful! Name: ${response.data.name}\nURL: ${response.data.url}`, event.threadID, event.messageID);
+    api.sendMessage(`💌MASSAGE: URL ADDED SUCCESSFUL\n🟡NAME: ${response.data.name}\n🖇️URL: ${response.data.url}`, event.threadID, event.messageID);
 
   } catch (e) {
     console.log(e);
