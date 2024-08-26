@@ -3,16 +3,12 @@ module.exports.config = {
   version: "0.0.2",
   permission: 0,
   prefix: true,
-  credits: "Nayan",
+  credits: "Shaon",
   description: "sad video",
   category: "admin",
   usages: "",
     cooldowns: 5,
 };
-
-
-
-
 
 module.exports.run = async function({ api, event, args }) {
     const axios = require("axios")
