@@ -22,7 +22,7 @@ module.exports.run = async function({ api, event, args }) {
     let video = `${res.data.url}`;
   let name = `${res.data.name}`;
     let cp = `${res.data.cp}`
-  let ln = `${res.data.length}`
+  let ln = `${res.data.count}`
 
     let videos = (await axios.get(`${video}`, {
         responseType: 'arraybuffer'
